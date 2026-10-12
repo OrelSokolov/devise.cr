@@ -2,3 +2,5 @@
 /.shards/
 /tmp/
 *.dwarf
+/shard.lock
+/shard.override.yml
