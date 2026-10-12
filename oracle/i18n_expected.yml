@@ -1,0 +1,14 @@
+i18n_devise_keys	["confirmations.confirmed", "confirmations.send_instructions", "confirmations.send_paranoid_instructions", "failure.already_authenticated", "failure.inactive", "failure.invalid", "failure.last_attempt", "failure.locked", "failure.not_found_in_database", "failure.timeout", "failure.unauthenticated", "failure.unconfirmed", "mailer.confirmation_instructions.subject", "mailer.email_changed.subject", "mailer.password_change.subject", "mailer.reset_password_instructions.subject", "mailer.unlock_instructions.subject", "omniauth_callbacks.failure", "omniauth_callbacks.success", "passwords.no_token", "passwords.send_instructions", "passwords.send_paranoid_instructions", "passwords.updated", "passwords.updated_not_active", "registrations.destroyed", "registrations.signed_up", "registrations.signed_up_but_inactive", "registrations.signed_up_but_locked", "registrations.signed_up_but_unconfirmed", "registrations.update_needs_confirmation", "registrations.updated", "registrations.updated_but_not_signed_in", "sessions.already_signed_out", "sessions.signed_in", "sessions.signed_out", "unlocks.send_instructions", "unlocks.send_paranoid_instructions", "unlocks.unlocked"]
+i18n_errors_keys	["messages.already_confirmed", "messages.confirmation_period_expired", "messages.expired", "messages.not_found", "messages.not_locked", "messages.not_saved.one", "messages.not_saved.other"]
+i18n_en_only	en.yml
+i18n_flash_signed_in	Signed in successfully.
+i18n_flash_welcome	Welcome! You have signed up successfully.
+i18n_failure_invalid	Invalid Email or password.
+i18n_failure_locked	Your account is locked.
+i18n_mailer_reset_subject	Reset password instructions
+i18n_mailer_confirmation_subject	Confirmation instructions
+i18n_not_saved_one	1 error prohibited this User from being saved:
+i18n_not_saved_other	3 errors prohibited this User from being saved:
+i18n_ru_flash_signed_in	Вход в систему выполнен.
+i18n_ru_failure_invalid	Неверный Почта или пароль.
+i18n_ru_not_saved_other	Не удалось сохранить Пользователь: обнаружено 3 ошибок

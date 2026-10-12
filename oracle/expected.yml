@@ -1,0 +1,66 @@
+pw_digest_shape	true
+pw_valid	true
+pw_wrong	false
+pw_blank_hash	false
+pw_deterministic_by_salt	true
+pw_pepper_digest	true
+pw_pepper_valid	[true, false]
+val_ok	true
+val_email_missing	[false, true]
+val_email_bad	[false, true]
+val_email_uniq	[false, true]
+val_pw_short	[false, true]
+val_pw_long	[false, true]
+val_pw_mismatch	[false, true]
+val_update_no_pw	true
+uwp_ok	[true, "uwp@e.co"]
+uwp_bad_pw	[false, true, "uwp@e.co"]
+uwp_new_password	[true, true]
+auth_salt_shape	true
+rem_me	true
+rem_serialize	[true, true, true]
+rem_from_cookie	true
+rem_wrong_token	nil
+rem_expired	nil
+rem_forget	true
+reg_create	[true, true]
+tok_digest_fixed	8a17745964b7f8088eb40be094981df854c8a88279c38906ab108afb59f912bc
+tok_friendly_shape	[20, true, true]
+rec_send_instructions	[true, true, true, true]
+rec_find_by_token	[true, true]
+rec_reset_by_token_ok	[true, true, true]
+rec_reset_by_token_invalid	[false, true, [:invalid]]
+rec_reset_by_token_expired	[true, [:expired]]
+rec_reset_blank_password	[true, [:blank]]
+rec_reset_short_password	[true, true, true]
+rec_send_by_email_found	[true, true, true]
+rec_send_by_email_missing	[false, true, [:not_found]]
+rec_period_valid	[true, false]
+conf_on_create	[true, true, false, true, true]
+conf_confirm	[true, true, false, true, [:already_confirmed]]
+conf_confirm_by_token	[true, true]
+conf_confirm_by_token_invalid	[false, true, [:invalid]]
+conf_confirm_by_token_blank	[false, [:blank]]
+conf_period_expired	[false, false, [:confirmation_period_expired]]
+conf_active_for_authentication	[false, :unconfirmed, true]
+conf_allow_unconfirmed	true
+conf_reconfirmable	["conf7@e.co", "newmail@e.co", true, true, true, "newmail@e.co", nil, true]
+conf_send_by_email_missing	[false, [:not_found]]
+conf_skip_confirmation	[true, true, true]
+track_once	[1, true, true, "1.2.3.4", "1.2.3.4"]
+track_twice	[2, true, "1.2.3.4", "5.6.7.8"]
+track_new_record_skipped	true
+lock_strategies	[true, true, true, false]
+lock_attempts	[false, 2, false, :last_attempt]
+lock_locks_after_max	[true, true, 3, true, true, :locked, false]
+lock_unlock_access	[false, 0, true]
+lock_expired	false
+lock_unlock_by_token	[true, false, false, [:invalid]]
+lock_last_attempt_message	:last_attempt
+t_out_recent	false
+t_out_expired	true
+t_out_nil	nil
+t_out_disabled	false
+mail_reset	["Reset password instructions", ["mal1@e.co"], ["test@example.com"]]
+mail_confirmation	["Confirmation instructions", ["mal2@e.co"], ["test@example.com"]]
+mail_unlock	["Unlock instructions", ["mal3@e.co"], ["test@example.com"]]

@@ -1,0 +1,294 @@
+---
+users:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('users_id_seq'::regclass)
+  - name: email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: encrypted_password
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: remember_created_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+  - name: updated_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+members:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('members_id_seq'::regclass)
+  - name: email
+    type: varchar
+    nullable: 'NO'
+    default:
+  - name: encrypted_password
+    type: varchar
+    nullable: 'NO'
+    default:
+  - name: reset_password_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: reset_password_sent_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: confirmation_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: confirmed_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: confirmation_sent_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: unconfirmed_email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: failed_attempts
+    type: int4
+    nullable: 'NO'
+    default: '0'
+  - name: unlock_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: locked_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: sign_in_count
+    type: int4
+    nullable: 'YES'
+    default:
+  - name: current_sign_in_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: last_sign_in_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: current_sign_in_ip
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: last_sign_in_ip
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+  - name: updated_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+devise_refresh_tokens:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('devise_refresh_tokens_id_seq'::regclass)
+  - name: user_id
+    type: int8
+    nullable: 'NO'
+    default:
+  - name: token_hash
+    type: varchar
+    nullable: 'NO'
+    default:
+  - name: expires_at
+    type: timestamp
+    nullable: 'NO'
+    default:
+  - name: revoked_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+oauth_users:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('oauth_users_id_seq'::regclass)
+  - name: provider
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: uid
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: encrypted_password
+    type: varchar
+    nullable: 'NO'
+    default: ''
+  - name: name
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: image
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: remember_created_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+  - name: updated_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+
+http_users:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('http_users_id_seq'::regclass)
+  - name: email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: encrypted_password
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: reset_password_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: reset_password_sent_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: remember_created_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: confirmation_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: confirmed_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: confirmation_sent_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: unconfirmed_email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: failed_attempts
+    type: int4
+    nullable: 'NO'
+    default: '0'
+  - name: unlock_token
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: locked_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: sign_in_count
+    type: int4
+    nullable: 'NO'
+    default: '0'
+  - name: current_sign_in_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: last_sign_in_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: current_sign_in_ip
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: last_sign_in_ip
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: provider
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: uid
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+  - name: updated_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+th_users:
+  columns:
+  - name: id
+    type: int8
+    nullable: 'NO'
+    default: nextval('th_users_id_seq'::regclass)
+  - name: email
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: encrypted_password
+    type: varchar
+    nullable: 'YES'
+    default:
+  - name: remember_created_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: confirmed_at
+    type: timestamp
+    nullable: 'YES'
+    default:
+  - name: created_at
+    type: timestamp
+    nullable: 'NO'
+    default: now()
+  - name: updated_at
+    type: timestamp
+    nullable: 'YES'
+    default:

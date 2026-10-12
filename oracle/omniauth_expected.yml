@@ -1,0 +1,37 @@
+oa_modules	true
+oa_providers	[:google_oauth2]
+oa_providers_default	[]
+oa_friendly_token_shape	[true, true, true]
+oa_friendly_token_len	true
+oa_from_create	[true, "google_oauth2", "1000000000000000001", "test@example.com", "Test User", true]
+oa_from_idempotent	[true, true]
+oa_from_new_uid	[true, "42", true]
+oa_oauth_user_valid	[true, true]
+oa_auth_hash_valid	true
+oa_auth_hash_invalid_no_name	true
+oa_auth_hash_invalid_empty_info	false
+oa_auth_hash_name_fallback	["A B", "nick", "e@x.co", nil]
+g_client_site	https://oauth2.googleapis.com
+g_authorize_url	https://accounts.google.com/o/oauth2/auth
+g_token_url	https://oauth2.googleapis.com/token
+g_scope_default	email profile
+g_scope_custom	profile email https://www.googleapis.com/auth/calendar
+g_scope_url_untouched	https://www.googleapis.com/auth/calendar.profile
+g_access_type_default	offline
+g_state_in_session	[true, true]
+g_authorize_url_full	[["access_type", "offline"], ["client_id", "appid"], ["redirect_uri", "http://localhost:3000/users/auth/google_oauth2/callback"], ["response_type", "code"], ["scope", "email profile"], ["state", "hex48"]]
+g_hash_verified	{"credentials":{"expires":false,"scope":"email profile","token":"ya29.access.token"},"extra":{"id_token":"ya29.access.token","raw_info":{"email":"test@example.com","email_verified":true,"family_name":"User","given_name":"Test","name":"Test User","picture":"https://lh3.googleusercontent.com/a-/photo.jpg","profile":"https://plus.google.com/1000000000000000001","sub":"1000000000000000001"}},"info":{"email":"test@example.com","email_verified":true,"first_name":"Test","image":"https://lh3.googleusercontent.com/a-/photo.jpg","last_name":"User","name":"Test User","unverified_email":"test@example.com","urls":{"google":"https://plus.google.com/1000000000000000001"}},"provider":"google_oauth2","uid":"1000000000000000001"}
+g_hash_unverified_email	{"credentials":{"expires":false,"scope":"email profile","token":"ya29.access.token"},"extra":{"id_token":"ya29.access.token","raw_info":{"email":"test@example.com","email_verified":false,"family_name":"User","given_name":"Test","name":"Test User","picture":"https://lh3.googleusercontent.com/a-/photo.jpg","profile":"https://plus.google.com/1000000000000000001","sub":"1000000000000000001"}},"info":{"email_verified":false,"first_name":"Test","image":"https://lh3.googleusercontent.com/a-/photo.jpg","last_name":"User","name":"Test User","unverified_email":"test@example.com","urls":{"google":"https://plus.google.com/1000000000000000001"}},"provider":"google_oauth2","uid":"1000000000000000001"}
+g_hash_no_name	{"credentials":{"expires":false,"scope":"email profile","token":"ya29.access.token"},"extra":{"id_token":"ya29.access.token","raw_info":{"email":"noname@example.com","email_verified":true,"sub":"555"}},"info":{"email":"noname@example.com","email_verified":true,"name":"noname@example.com","unverified_email":"noname@example.com"},"provider":"google_oauth2","uid":"555"}
+g_hash_uid_sub	1000000000000000001
+gh_client_site	https://api.github.com
+gh_authorize_url	https://github.com/login/oauth/authorize
+gh_token_url	https://github.com/login/oauth/access_token
+gh_scope_default	nil
+gh_scope_custom	user,public_repo
+gh_state_in_session	[true, true]
+gh_authorize_url_full	[["client_id", "appid"], ["redirect_uri", "http://localhost:3000/users/auth/github/callback"], ["response_type", "code"], ["scope", "user"], ["state", "hex48"]]
+gh_hash_user	{"credentials":{"expires":false,"token":"ghu.access.token"},"extra":{"all_emails":[{"email":"primary@example.com","primary":true,"verified":true},{"email":"other@example.com","primary":false,"verified":true}],"raw_info":{"avatar_url":"https://avatars.githubusercontent.com/u/38758392?v=4","blog":"https://blog.example.com","email":"public@example.com","html_url":"https://github.com/testuser","id":38758392,"login":"testuser","name":"Test User"},"scope":"user"},"info":{"email":"primary@example.com","image":"https://avatars.githubusercontent.com/u/38758392?v=4","name":"Test User","nickname":"testuser","urls":{"Blog":"https://blog.example.com","GitHub":"https://github.com/testuser"}},"provider":"github","uid":"38758392"}
+gh_hash_no_email_scope	{"credentials":{"expires":false,"token":"ghu.access.token"},"extra":{"all_emails":[],"raw_info":{"avatar_url":"https://avatars.githubusercontent.com/u/38758392?v=4","blog":"https://blog.example.com","email":"public@example.com","html_url":"https://github.com/testuser","id":38758392,"login":"testuser","name":"Test User"},"scope":null},"info":{"email":"public@example.com","image":"https://avatars.githubusercontent.com/u/38758392?v=4","name":"Test User","nickname":"testuser","urls":{"Blog":"https://blog.example.com","GitHub":"https://github.com/testuser"}},"provider":"github","uid":"38758392"}
+gh_hash_uid	38758392
+gh_email_access	[true, true, false]

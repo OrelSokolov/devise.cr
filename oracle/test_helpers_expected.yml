@@ -1,0 +1,14 @@
+th_find_scope_class	user
+th_find_scope_instance	user
+th_signed_in_private_status	200
+th_signed_in_private_body	secret
+th_signin_key_present	true
+th_warden_key_format	[Integer]+String
+th_warden_key_id	1
+th_signed_in_signin_status	302
+th_signed_in_signin_location	/
+th_scope_explicit_private_status	200
+th_signout_private_status	302
+th_signout_private_location	/users/sign_in
+th_signout_key_present	true
+th_signout_via_resource_status	302

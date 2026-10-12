@@ -1,0 +1,74 @@
+http_route_00	cancel_user_registration|GET|/users/cancel|devise/registrations#cancel
+http_route_01	destroy_user_session|DELETE|/users/sign_out|devise/sessions#destroy
+http_route_02	edit_user_password|GET|/users/password/edit|devise/passwords#edit
+http_route_03	edit_user_registration|GET|/users/edit|devise/registrations#edit
+http_route_04	new_user_confirmation|GET|/users/confirmation/new|devise/confirmations#new
+http_route_05	new_user_password|GET|/users/password/new|devise/passwords#new
+http_route_06	new_user_registration|GET|/users/sign_up|devise/registrations#new
+http_route_07	new_user_session|GET|/users/sign_in|devise/sessions#new
+http_route_08	new_user_unlock|GET|/users/unlock/new|devise/unlocks#new
+http_route_09	private|GET|/private|private#show
+http_route_10	rails_info_notes|GET|/rails/info/notes|rails/info#notes
+http_route_11	rails_info_properties|GET|/rails/info/properties|rails/info#properties
+http_route_12	rails_info_routes|GET|/rails/info/routes|rails/info#routes
+http_route_13	rails_info|GET|/rails/info|rails/info#index
+http_route_14	rails_mailers|GET|/rails/mailers|rails/mailers#index
+http_route_15	root|GET|/|#
+http_route_16	user_confirmation|GET|/users/confirmation|devise/confirmations#show
+http_route_17	user_google_oauth2_omniauth_authorize|GET|POST|/users/auth/google_oauth2|devise/omniauth_callbacks#passthru
+http_route_18	user_google_oauth2_omniauth_callback|GET|POST|/users/auth/google_oauth2/callback|devise/omniauth_callbacks#google_oauth2
+http_route_19	user_password|PATCH|/users/password|devise/passwords#update
+http_route_20	user_registration|PATCH|/users|devise/registrations#update
+http_route_21	user_session|POST|/users/sign_in|devise/sessions#create
+http_route_22	user_unlock|GET|/users/unlock|devise/unlocks#show
+http_route_23	|DELETE|/users|devise/registrations#destroy
+http_route_24	|GET|/rails/mailers/*path|rails/mailers#preview
+http_route_25	|GET|/rails/mailers/download/*path|rails/mailers#download
+http_route_26	|GET|/|rails/welcome#index
+http_route_27	|POST|/users/confirmation|devise/confirmations#create
+http_route_28	|POST|/users/password|devise/passwords#create
+http_route_29	|POST|/users/unlock|devise/unlocks#create
+http_route_30	|POST|/users|devise/registrations#create
+http_route_31	|PUT|/users/password|devise/passwords#update
+http_route_32	|PUT|/users|devise/registrations#update
+http_register_status	303
+http_register_location	/
+http_register_flash	notice=A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
+http_register_session_keys	flash,session_id
+http_register_signs_in_automatically	true
+http_signout_status	303
+http_signout_flash	notice=Signed out successfully.
+http_signin_form_status	200
+http_signin_bad_status	422
+http_signin_bad_location	
+http_signin_bad_flash	alert=Invalid Email or password.,notice=Signed out successfully.
+http_signin_bad_session_keys	session_id
+http_signin_status	303
+http_signin_location	/
+http_signin_flash	notice=Signed in successfully.
+http_signin_session_keys	flash,session_id,warden.user.user.key,warden.user.user.session
+http_warden_key_format	[Integer]+String
+http_warden_key_id	10
+http_signin_form_signed_in_status	302
+http_signin_form_signed_in_location	/
+http_guard_unauth_status	302
+http_guard_unauth_location	/users/sign_in
+http_guard_unauth_flash	alert=You need to sign in or sign up before continuing.
+http_guard_auth_status	200
+http_guard_auth_body	secret
+http_remember_cookie_names	remember_user_token
+http_remember_auto_sign_in_status	200
+http_pw_request_status	303
+http_pw_request_location	/users/sign_in
+http_pw_request_flash	notice=You will receive an email with instructions on how to reset your password in a few minutes.
+http_pw_token_present	true
+http_pw_edit_status	200
+http_pw_update_status	303
+http_pw_update_location	/
+http_pw_update_flash	notice=Your password has been changed successfully. You are now signed in.
+http_pw_new_password_works	true
+http_confirm_status	302
+http_confirm_location	/users/sign_in
+http_confirm_flash	notice=Your email address has been successfully confirmed.
+http_confirm_confirmed	true
+http_omniauth_passthru_status	404
