@@ -219,7 +219,12 @@ class ActiveRecord::Base
       end
 
       def remember_me?(token : String, generated_at : String) : Bool
-        gen = Time.unix_ms((generated_at.to_f * 1000).to_i64)
+        # Full sub-second precision (the cookie carries "%f" ≈ µs): a ms-
+        # truncated Time.unix_ms parse loses the fraction PG keeps in
+        # remember_created_at, making `gen > remember_created_at` flaky
+        # when both calls land in the same millisecond.
+        secs = generated_at.to_f
+        gen = Time.unix(secs.to_i64) + Time::Span.new(nanoseconds: ((secs % 1) * 1_000_000_000).to_i64)
         (Time.utc - Devise.remember_for < gen) &&
           (remember_created_at.nil? ? false : gen > remember_created_at.not_nil!) &&
           Devise.secure_compare(authenticatable_salt.to_s, token)
