@@ -9,6 +9,7 @@
 # Devise.t/t!/load_locale/locale=).
 
 require "active_record_cr"
+require "active_job_cr"
 require "action_mailer_cr"
 require "action_pack_cr"
 require "./encryptor"

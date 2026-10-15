@@ -39,9 +39,29 @@ module Devise
       Devise.t!("#{Devise.default_scope}_subject", scope: "devise.mailer.#{key}")
     end
 
+    # Тело действия инстанцируется дважды: прямым вызовом из
+    # deliver_devise_notification (record — AR-модель, opts — Hash) и
+    # action_mailer's __deliver codegen'ом (deliver_later; все аргументы —
+    # serialized ActiveJob::ArgValue). У ArgValue нет #[]?(String)
+    # (Array-ветка), а attributes генерится на конкретных моделях, не на
+    # Base+ — поэтому доступ идёт через as?(Hash) и оверлоад по record
+    # (сериализованный путь email не знает: AR-записи в ArgValue не
+    # входят, GlobalID-сериализации нет).
     private def devise_mail(record, subject, opts)
-      to = opts["to"]?.try(&.to_s) || record.attributes["email"]?.try(&.to_s)
-      mail(to: to, subject: subject, body: opts["body"]?.try(&.to_s) || "")
+      to = __opts_get(opts, "to") || __record_email(record)
+      mail(to: to, subject: subject, body: __opts_get(opts, "body") || "")
+    end
+
+    private def __opts_get(opts, key : String) : String?
+      opts.as?(Hash).try { |h| h[key]?.try(&.to_s) }
+    end
+
+    private def __record_email(record : ::ActiveJob::ArgValue) : String?
+      nil
+    end
+
+    private def __record_email(record) : String?
+      record.attributes["email"]?.try(&.to_s)
     end
 
     # Model-side dispatch: send_devise_notification(:reset_password_instructions, raw, opts?)

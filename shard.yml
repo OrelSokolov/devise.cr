@@ -1,10 +1,16 @@
 ---
 name: devise_cr
-version: 0.1.0
+version: 0.1.1
 crystal: ">= 1.21.0"
 dependencies:
   active_record_cr:
     github: OrelSokolov/active_record.cr
+    version: ~> 0.1.0
+  # Mailer dispatches on ActiveJob::ArgValue (action_mailer's __deliver
+  # codegen instantiates mailer actions with serialized args) — used
+  # directly in src/mailer.cr.
+  active_job_cr:
+    github: OrelSokolov/active_job.cr
     version: ~> 0.1.0
   action_mailer_cr:
     github: OrelSokolov/action_mailer.cr
