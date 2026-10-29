@@ -44,7 +44,7 @@ module Devise
       if content
         @performed = true
         response.status_code = status.is_a?(Int32) ? status : __status_int(status)
-        body = __layout? ? __render_layout { content } : content
+        body = __layout?(action) ? __render_layout { content } : content
         response.headers["Content-Type"] = "text/html; charset=utf-8"
         __verify_same_origin_request
         response.print body
